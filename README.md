@@ -31,7 +31,8 @@ If the object and image points are found I use them to calibrate the camera. I d
 
 Using the return values from the calibrate_camera() function, the `cv2.undistort` function gives me the following output:
 
-`Calibrated and Undistorted` <img src="./camera_cal/calibration2.jpg" alt="Not Calibrated and distored" width="400px"/>
+`Original Image` <img src="./camera_cal/calibration2.jpg" alt="Not Calibrated and distored" width="400px"/>
+
 `Calibrated and Undistorted` <img src="./output_images/undistorted_chessboard.jpg" alt="Undistorted" width="400px"/>
 
 ### Pipeline (single images)
@@ -43,7 +44,8 @@ The code for this step is contained in the 4th code cell of the IPython notebook
 The first step in the image processing pipeline to undistort the image. The above explanation shows how I implemented this.
 Here is an example:
 
-`Calibrated and Undistorted` <img src="test_images/test1.jpg" alt="Not Calibrated and distored" width="400px"/>
+`Original Image` <img src="test_images/test1.jpg" alt="Not Calibrated and distored" width="400px"/>
+
 `Calibrated and Undistorted` <img src="./output_images/undistorted_test_image.jpg" alt="Undistored" width="400px"/>
 
 #### 2. Using color transforms, gradients and magintudes to create a thresholded binary image.
@@ -66,6 +68,7 @@ To get good result I combined the different threshold. The binary operations tha
 Here's an example of my output for this step.
 
 `Original Image` <img src="./output_images/test_lane_image.jpg" alt="original" width="400px"/>
+
 `Combined thresholds binary image` <img src="./output_images/threshold_all_combined.jpg" alt="thresholds" width="400px"/>
 
 #### 3. Perspective transform
@@ -88,6 +91,7 @@ This resulted in the following source and destination points:
 The following images show the output of the perspective tranform:
 
 `Original Image` <img src="./output_images/test_lane_image.jpg" alt="original" width="400px"/>
+
 `Warped Image` <img src="./output_images/warped.jpg" alt="wapred" width="400px"/>
 
 #### 4. identifying lane-line pixels and fit their positions with a polynomial?
@@ -103,6 +107,7 @@ To identify lane pixels I took the following steps:
 * draw the lane line on the image and warp the image back to its original shape
 
 `Original Image` <img src="./output_images/test_lane_image.jpg" alt="original" width="400px"/>
+
 `Polynomial` <img src="./output_images/polynomial.jpg" alt="polynomial" width="400px"/>
 
 #### 5. Calculating the radius of curvature of the lane and the position of the vehicle with respect to center.
@@ -119,6 +124,7 @@ The code for this step is contained in the 26th code cell of the IPython noteboo
 I implemented a function that processes test images. It is very similar to the final pipeline but does not have state.
 
 `Calibrated and Undistorted` <img src="./output_images/test_lane_image.jpg" alt="Undistored" width="400px"/>
+
 `Calibrated and Undistorted` <img src="./output_images/lines_drawn.jpg" alt="Undistored" width="400px"/>
 
 ---
